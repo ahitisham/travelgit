@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="">
+    <title>My Application</title>
+
+    
+    <link href="/htdocs_folder/TravelBooking/frontend/web/assets/site/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/htdocs_folder/TravelBooking/frontend/web/assets/site/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/travel/stylesheet/css/travel.css">
+</head>
+
+
+<body>
+<!-- header start -->
+
+<header id="header" class="navbar-static-top">
+    <div class="topnav hidden-xs">
+        <div class="container">
+            <ul class="quick-menu pull-right">
+                <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>                        
+            </ul>
+        </div>
+        </div>
+</header>
+<!-- header end -->
+ <!-- main header start -->
+<div class="main-header">                
+     <div class="container">
+        <h1 class="logo navbar-brand">
+            <a href="javascript:void(0)" title="Caritor travel - home">
+                
+                <h1>Caritor Travel</h1>
+            </a>
+        </h1>
+     </div>
+</div>
+    <!-- main header end -->
+<!-- section1 start title -->
+<div id="section1">
+<div class="page-title-container">
+    <div class="container">
+        <div class="page-title pull-left">
+            <h2 class="entry-title">Bus Search Results</h2>
+        </div>
+    </div>
+</div>
+</div>
+<!-- section1 end -->
+<!-- section2 start -->
+<div id="section2">
+<section class="content ">
+    <div class="container">
+        <div id="main">
+            <div class="row main-blockspace" style="margin-bottom: 3%">
+                <div class="col-sm-4 col-md-5">
+                    <div class="toggle-container filters-container">
+                        <div class="panel style1 arrow-right">
+                            <form id="searchbuses" name="search" action="/htdocs_folder/TravelBooking/booking/searchbuses" method="get" novalidate="novalidate"><!--
+                            <form name="search" id="searchbuses" method="post"
+                                action="/htdocs_folder/TravelBooking/frontend/web/index.php?r=booking/searchbuses">
+-->
+                            <input type="hidden" name="fromcity" value="" id="fromcity"> <input type="hidden" name="tocity" value="" id="tocity">
+                            <div class="row col-md-12">
+                                <br>
+                            </div>
+                            <div class="row col-md-12">
+                                <div class="form-group col-sm-8 col-md-6">
+                                    <label>FromCity</label> <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input class="input-text full-width ui-autocomplete-input" type="text" id="source" placeholder="enter from city" name="source" autocomplete="off">
+                                </div>
+                                <span id="" class=""></span>
+                                <div class="form-group col-sm-8 col-md-6 ">
+                                    <label>ToCity</label> <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input class="input-text full-width ui-autocomplete-input" id="destination" name="destination" type="text" placeholder="To city" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="row col-md-12">
+                                <div class="col-xs-6">
+                                    <label>Date Of Journey</label>
+                                    <div class="datepicker-wrap">
+                                        <input type="text" class="input-text start-date                                              full-width hasDatepicker" autocomplete="off" placeholder="dd/mm/yy" id="doj" name="doj" readonly="readonly"><img class="ui-datepicker-trigger" src="images/icon/blank.png" alt="" title="">
+                                    </div>
+                                </div>
+                                <span id="switchButton" class="switchButton"></span>
+                                <div class="col-xs-6">
+                                    <label>Date Of Return(Optional)</label>
+                                    <div class="datepicker-wrap">
+                                        <input type="text" class="input-text  full-width hasDatepicker" autocomplete="off" placeholder="dd/mm/yy" name="dor" id="dor" readonly="readonly"><img class="ui-datepicker-trigger" src="images/icon/blank.png" alt="" title="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row right">
+
+                                <div class="form-group col-md-offset-5  col-md-5 fixheight">
+                                    <label class="hidden-xs"> </label>
+                                    <button data-animation-duration="1" data-animation-type="bounce" class="full-width icon-check animated bounce travelsearchbuses" type="submit" style="animation-duration: 1s; visibility: visible;">SEARCH
+                                        BUSES</button>
+                                </div>
+
+                            </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 basic-style pdt1">
+                        <div class="col-md-12 pdl0 bold">For Reservation &amp; Booking related
+                            queries</div>
+                        <div class="col-md-12 pdl0">
+                            <div class="col-md-5 pdl0">
+                                <i class="fa fa-mobile fa-2x col-md-2"></i>
+                                <div class="col-md-9 pdl0">080-26801616</div>
+                            </div>
+                            <div class="col-md-7 pdl0">
+                                <i class="fa fa-envelope  col-md-2" style="margin-top: 3px;"></i>
+                                <div class="col-md-9 pdl0">info@caritorsolution.com</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 basic-style pdt2">
+                        <div class="col-md-12 pdl0 bold">For E-ticketing &amp; payment related
+                            queries</div>
+                        <div class="col-md-12 pdl0">
+                            <div class="col-md-5 pdl0">
+                                <i class="fa fa-mobile fa-2x col-md-2"></i>
+                                <div class="col-md-9 pdl0">080-49055550</div>
+                            </div>
+                            <div class="col-md-7 pdl0">
+                                <i class="fa fa-mobile fa-2x col-md-2"></i>
+                                <div class="col-md-9 pdl0">080-49055550</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-7">
+
+
+                    <div class="col-md-12 home-slider">
+
+
+                        <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 308px;"><ul class="bxslider" style="width: auto; position: relative;">
+                        
+                                                 <li style="float: none; list-style: none; position: absolute; width: 613px; z-index: 51; display: block; opacity: 0.651817;"><img src="/htdocs_folder/TravelBooking/frontend/web/images/home-slider/b685131ae4fc500bc48f7a643cfcfee5xbnr.jpg" alt="Slider"></li>
+                                             
+                        
+                        </ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next disabled" href="">Next</a></div></div></div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <!-- 
+ * Aurthor   : Syed Hyder
+ * Date      : 6/10/2015
+ * Purpose   : Front ui jquery (deisigning)
+
+ -->
+            <!-- START
+ * Aurthor   : Santosh
+ * Date      : 14/10/2015
+ * Purpose   : Quick Book, Testimonials, Buses List
+
+ -->
+
+            <div class="row">
+                <!-- Quick links -->
+                <div class="col-md-12 main-blockspace" id="QuickBook">
+
+                    <!-- testing start -->
+
+                    <div class="row hide">
+                        <div class="form-group col-md-3">
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                <input type="text" class="form-control">
+                            </div>
+                            <span class="help-block">format mm-dd-yyyy</span>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="container">
+                            <div class="block row">
+                                <div class="col-md-6">
+                                    <h2>Quick Book</h2>
+                                    <div class="tab-container style1 box">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active">
+                                                <ul style="display: table;">
+                                                    <li style="display: table-row;" id="QuickBook">
+                                                        <ul class="list-unstyled list-icons col-lg-12">
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="31-109">
+                                                                Bangalore - Belgaum                                                         </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="31-10">
+                                                                Bangalore - Hyderabad                                                           </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="109-31">
+                                                                Belgaum - Bangalore                                                         </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="41-31">
+                                                                Mumbai - Bangalore                                                          </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="41-75">
+                                                                Mumbai - Jaipur                                                         </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="31-332">
+                                                                Bangalore - Coimbatore                                                          </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="10-41">
+                                                                Hyderabad - Mumbai                                                          </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="31-1143">
+                                                                Bangalore - Athani                                                          </li>
+                                                                                                                
+                                                            <li class="ui-datepicker-trigger1  col-md-4" id="10-31">
+                                                                Hyderabad - Bangalore                                                           </li>
+                                                                                                            </ul>
+
+
+
+                                                    </li>
+                                                </ul>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h2>Testimonials</h2> 
+                                    <a href="http://192.168.1.40/htdocs_folder/TravelBooking/site/testimonials">view all</a>
+                                    <div class="testimonial style1 box">
+                                        <ul class="slides ">
+                                                                                </ul>
+                                    </div>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+
+
+                    <!-- END
+ * Aurthor   : Santosh
+ * Date      : 14/10/2015
+ * Purpose   : Quick Book, Testimonials, Buses List
+
+ -->
+                    <!-- testing end -->
+
+                    <div class="col-md-8">
+                        <div class="col-md-12 ">
+                            <h3>Quick Book</h3>
+                        </div>
+                        <div class="col-md-3 ">
+                            <ul class="list-unstyled list-icons ">
+
+                                <li class="ui-datepicker-trigger1">Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3">
+                            <ul class="list-unstyled list-icons">
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="list-unstyled list-icons">
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="list-unstyled list-icons">
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                                <li>Pushkar - Bangalore</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                    <!-- START
+ * Aurthor   : Santosh
+ * Date      : 14/10/2015
+ * Purpose   : Travels All Routes
+
+ -->
+                    <div class="col-md-4" id="allroute">
+                        <div class="col-md-12">
+                            <h3>Travels All Routes</h3>
+                        </div>
+                        <div class="clear">
+                            <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 286px;"><ul class="allroute" style="width: auto; position: relative; transition-duration: 35s; transform: translate3d(0px, -1054px, 0px); transition-timing-function: linear;">
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Athani</div>
+                                    <div class="bus-timee">Dept: 7:45 PM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Bijapur</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Mysore</div>
+                                    <div class="bus-timee">Dept: 10:00 AM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Belgaum</div>
+                                    <div class="bus-timee">Dept: 10:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Chikodi</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Belgaum » Bangalore</div>
+                                    <div class="bus-timee">Dept: 8:15 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore Intl Airport » Bagalkot</div>
+                                    <div class="bus-timee">Dept: 9:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bagalkot » Bangalore Intl Airport</div>
+                                    <div class="bus-timee">Dept: 9:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bangalore » Bijapur</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                        <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;">
+                                    <div class="route-namee">Bijapur » Bangalore</div>
+                                    <div class="bus-timee">Dept: 7:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li>
+                                                                
+                            <li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Athani</div>
+                                    <div class="bus-timee">Dept: 7:45 PM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Bijapur</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Mysore</div>
+                                    <div class="bus-timee">Dept: 10:00 AM / Volvo Semiseater</div>
+                                    <div class="bus-timee">Non-AC, Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Mumbai</div>
+                                    <div class="bus-timee">Dept: 3:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Belgaum</div>
+                                    <div class="bus-timee">Dept: 10:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Chikodi</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Belgaum » Bangalore</div>
+                                    <div class="bus-timee">Dept: 8:15 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore Intl Airport » Bagalkot</div>
+                                    <div class="bus-timee">Dept: 9:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bagalkot » Bangalore Intl Airport</div>
+                                    <div class="bus-timee">Dept: 9:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bangalore » Bijapur</div>
+                                    <div class="bus-timee">Dept: 8:30 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li><li style="float: none; list-style: none; position: relative; width: 200px; margin-bottom: 10px;" class="bx-clone">
+                                    <div class="route-namee">Bijapur » Bangalore</div>
+                                    <div class="bus-timee">Dept: 7:00 PM / Scania Semisleeper</div>
+                                    <div class="bus-timee">Non-AC, Non-Video</div>
+                                </li></ul></div></div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <!-- end quick links -->
+
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+<!-- section2 end -->
+</body>
+</html>
